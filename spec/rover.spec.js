@@ -11,8 +11,17 @@ describe("Rover class", function() {
   // 7 tests here!
 
   it("constructor sets position and default values for mode and generatorWatts", function(){
-    expect(function() {new Rover();}).toThrow(new Error(''))
+  let test7 = new Rover(100)
+    expect(test7).toEqual(new Rover(100, 'Normal', 110));
   })
 
+  it("response returned by receiveMessage contains name of message", function(){
+  //let test8 = new Rover.receiveMessage(message)
+    //console.log(test8)
+  let message = new Message('TA power');
+  let response = Rover.receiveMessage(message);
+  expect(response.message).toEqual('TA power');
+
+  })
 
 });
